@@ -16,6 +16,17 @@ def index():
     return render_template('index.html')
 
 
+def get_location(question):
+    """ return location from GOOGLE API """
+
+    return "Answer Google Api for " + question
+
+
+def get_story(text):
+    """ return story of title from WIKI API """
+
+    return "Answer Wiki Api for " + text
+
 # if not import launch main
 if __name__ == '__main__':
     app.run()
