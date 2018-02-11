@@ -16,6 +16,11 @@ def index():
     return render_template('index.html')
 
 
+def result():
+    """ display result of ajax request """
+    return "Result"
+
+
 def get_location(question):
     """ return location from GOOGLE API """
 
