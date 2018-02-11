@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>GrandPy Bot</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no"/>
+    <meta name="description" content="Une histoire vieille comme le monde" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Dépendances -->
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <!-- API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDsUmBpuxHQ3cb1KBQ-vC-Sk7nz1w5ftxg"
+    async defer></script>
+
+</head>
+<body>
+
+    {% block content %} {% endblock %}
+
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<div class="ia bloc">
+    <p class="response">
+        <span class="name">GrandPy : </span><br/>
+            {{ title }} <br/>
+            {{ location }}
+         </p>
+    <div id="{{ id }}" class="map"></div>
+</div>
+
+<div class="story bloc">
+    <p class="response">
+        <span class="name">GrandPy : </span><br/>
+        {{  story  }}
+         </p>
+</div>
+
+<script>
+      var data = {{  localisation| tojson }};
+      new google.maps.Map(document.getElementById('{{  id }}'), {
+          center: data,
+          zoom: 8
+        });
+</script>

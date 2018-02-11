@@ -1,1 +1,28 @@
-<h1>Page index</h1>
+{% extends 'base.html' %}
+
+{% block content %}
+    <main>
+        <header>
+            <img src="{{ url_for('static', filename='img/logo.png') }}" alt="logo grandpy">
+            <h1>Les histoires de GrandPy</h1>
+            <div class="description"></div>
+        </header>
+        <div id="main-content">
+            <form action="/result/" method="post" id="form-1" >
+                <label for="q">Une question pour GrandPy ?</label>
+                <input id="q" type="text" name="q" placeholder="Une question ?">
+            </form>
+            <div id="answer">
+                <ul>
+
+                </ul>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <footer>
+            <p>
+                <span class="name">Yohan SOLON</span> | <a href="https://github.com/milimi974/OC_Projet_7">Repository</a>
+            </p>
+        </footer>
+    </main>
+{% endblock %}
