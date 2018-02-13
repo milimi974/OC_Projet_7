@@ -27,6 +27,7 @@ def test_result():
 def test_parse_search_request():
     assert parse_search_request("Mon message pour le parser") == "message parser"
 
+
 # Mock google API answer
 def test_http_google_return(monkeypatch):
 
@@ -44,4 +45,4 @@ def test_http_google_return(monkeypatch):
         "query": "",
         "key": GOOGLE_API_KEY,
         "language": "fr",
-    }) ] == results
+    })] == results
