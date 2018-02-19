@@ -95,7 +95,6 @@ def get_request_results(url, params):
     """
     # send request and store result
     req = requests.get(url, params=params)
-    print(req.url)
     # convert result on json
     return req.json()
 
