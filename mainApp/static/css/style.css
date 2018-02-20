@@ -69,8 +69,8 @@ form input{
 .question .ia .name{}
 
 .map{
-    height: 150px;
-    width: 350px;
+    height: 250px;
+    max-width: 350px;
     margin: 0 auto;
 }
 footer{
