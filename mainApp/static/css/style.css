@@ -6,6 +6,7 @@ body{
 main{
     width: 90%;
     padding: 15px;
+    margin: 0 auto;
 }
 main header{
     text-align: center;
