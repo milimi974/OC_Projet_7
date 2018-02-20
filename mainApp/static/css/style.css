@@ -70,7 +70,7 @@ form input{
 
 .map{
     height: 250px;
-    max-width: 350px;
+    width: 90%;
     margin: 0 auto;
 }
 footer{
