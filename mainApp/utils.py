@@ -3,7 +3,7 @@
 
 import random
 from mainApp.stop_words import get_stop_words
-
+import os
 
 def find_grandpy_location_message(text):
     """ return random message
@@ -56,7 +56,13 @@ def parse_search_request(text):
         argument:
         text -- string
     """
-    stopwords = get_stop_words()
+    script_dir = os.path.dirname(__file__)
+    file = os.path.join(script_dir, 'stop_words.txt')
+    # Convert text file on list of words
+    text_stop_word = open(file, 'r')
+    stopwords = [line.split(',') for line in text_stop_word.readlines()]
+
+    # Convert search text on list of words
     words = text.lower().split(' ')
     for word in list(words):
         if word in stopwords:

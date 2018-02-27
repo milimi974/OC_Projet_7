@@ -7,10 +7,12 @@ import json
 
 GOOGLE_API_KEY = "AIzaSyDsUmBpuxHQ3cb1KBQ-vC-Sk7nz1w5ftxg"
 GOOGLE_API_SEARCH_URL = "https://maps.googleapis.com/maps/api/place/textsearch/json"
+WIKI_URL = "https://fr.wikipedia.org/w/api.php"
+
 
 # Test function get location form google API
 def test_get_location():
-    assert script.get_location("OpenClassRoom") == "Answer Google Api for OpenClassRoom"
+    assert script.get_location("Nice") == "Answer Google Api for OpenClassRoom"
 
 
 # Test function get_story from wiki API
@@ -45,4 +47,24 @@ def test_http_google_return(monkeypatch):
         "query": "",
         "key": GOOGLE_API_KEY,
         "language": "fr",
+    })] == results
+
+
+# Mock wiki API answer
+def test_http_wiki_return(monkeypatch):
+
+    results = [{
+        0: "",
+        1: [],
+        2: [],
+        3: [],
+    }]
+
+    def mockreturn(request):
+        return BytesIO(json.dumps(results).encode())
+
+    monkeypatch.setattr(urllib.request, 'urlopen', mockreturn)
+    assert [script.get_request_results(url=WIKI_URL, params={
+        "action": "opensearch",
+        "search": "",
     })] == results
