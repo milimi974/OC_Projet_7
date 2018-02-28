@@ -2,8 +2,9 @@
 # import dependencies
 
 import random
-from mainApp.stop_words import get_stop_words
+
 import os
+
 
 def find_grandpy_location_message(text):
     """ return random message
