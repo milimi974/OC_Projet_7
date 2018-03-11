@@ -43,6 +43,7 @@ def result():
 
         return render_template('result.html',
                                title=find_grandpy_location_message(google_response['name']),
+                               marker=google_response['name'],
                                location=google_response['formatted_address'],
                                id="map{}".format(request.form['id']),
                                localisation=google_response['geometry']['location'],
