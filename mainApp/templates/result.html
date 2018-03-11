@@ -16,8 +16,14 @@
 
 <script>
       var data = {{  localisation| tojson }};
-      new google.maps.Map(document.getElementById('{{  id }}'), {
+      var map = new google.maps.Map(document.getElementById('{{  id }}'), {
           center: data,
           zoom: 8
         });
+      new google.maps.Marker({
+        position: data,
+        map: map,
+        title: '{{ title }}'
+      });
+
 </script>
