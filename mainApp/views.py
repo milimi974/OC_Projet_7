@@ -47,7 +47,7 @@ def result():
                                location=google_response['formatted_address'],
                                id="map{}".format(request.form['id']),
                                localisation=google_response['geometry']['location'],
-                               story=story)
+                               story=story), 200
     # if no location found return error
     return render_template('error.html',
                            message=find_grandpy_error_message())
@@ -96,9 +96,10 @@ def get_request_results(url, params):
     """
     # send request and store result
     req = requests.get(url, params=params)
-    print(req.url)
+
     # convert result on json
     return req.json()
+
 
 # if not import launch main
 if __name__ == '__main__':
